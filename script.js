@@ -11,14 +11,6 @@ for (i = 0; i < close.length; i++) {
   }
 }
 
-var now = new Date();
-var hrs = now.getHours();
-var mins = now.getMinutes();
-if (mins < 10)
-  mins = "0" + mins;
-var secs = now.getSeconds();  
-var time = hrs + ":" + mins;
-
 var list1 = []; 
 var list2 = [];
 
@@ -32,38 +24,50 @@ function AddRow(){
 
   else {
     var timestr = document.getElementById("timebox").value;
-    if (!(timestr.includes("AM") || timestr.includes("PM"))) 
+    if (!(timestr.includes("AM") || timestr.includes("PM"))) {
       alert("Make sure to include a meridiem value! AKA AM or PM!"); 
-
-    if (timestr.includes("PM")) {
-      timestr = ((parseInt(timestr.substr(0, timestr.indexOf(":"))) + 12) + timestr.substr(timestr.indexOf(":"), timestr.length));
-
-      timestr = timestr.substr(0,6);
     }
 
-    if (timestr.includes("AM")) {
-      timestr = timestr.substr(0, timestr.indexOf(":"));
-    }
+    else {
+      if (timestr.includes("PM")) {
+        timestr = ((parseInt(timestr.substr(0, timestr.indexOf(":"))) + 12) + timestr.substr(timestr.indexOf(":"), timestr.length));
 
-    var add = document.getElementById('show'); 
-    var newRow = add.insertRow(currentRow); 
-    list1[i] = document.getElementById("reminderbox").value;list2[i] = document.getElementById("timebox").value; 
+        timestr = timestr.substr(0,6);
+      }
 
-    var cell1 = newRow.insertCell(0); 
-    var cell2 = newRow.insertCell(1); 
+      if (timestr.includes("AM")) {
+        timestr = timestr.substr(0, timestr.indexOf(":"))+ timestr.substr(timestr.indexOf(":"), timestr.length);
+      }
 
-    cell1.innerHTML = list1[i]; 
-    cell2.innerHTML = list2[i]; 
+      var now = new Date();
 
-    currentRow++; 
-    i++; 
+      var hrs = now.getHours();
+      var mins = now.getMinutes();
+      if (mins < 10)
+        mins = "0" + mins;
+      var secs = now.getSeconds();  
+      var time = hrs + ":" + mins;
+
+      var add = document.getElementById('show'); 
+      var newRow = add.insertRow(currentRow); 
+      list1[i] = document.getElementById("reminderbox").value;list2[i] = document.getElementById("timebox").value; 
+
+      var cell1 = newRow.insertCell(0); 
+      var cell2 = newRow.insertCell(1); 
+
+      cell1.innerHTML = list1[i]; 
+      cell2.innerHTML = list2[i]; 
+
+      currentRow++; 
+      i++; 
+      
+      var newTime = getSecs(timestr, 0) - getSecs(time, secs);  
+      var milliseconds = newTime * 1000; 
     
-    var newTime = getSecs(timestr, 0) - getSecs(time, secs);  
-    var milliseconds = newTime * 1000; 
-   
-    // console.log("newTime: " + newTime)
-    // console.log("milli " + milliseconds)
-    setTimeout( function ( ) { alert( document.getElementById("reminderbox").value ); }, milliseconds); 
+      // console.log("newTime: " + newTime)
+      // console.log("milli " + milliseconds)
+      setTimeout( function ( ) { alert( document.getElementById("reminderbox").value ); }, milliseconds); 
+    }
   }
 }
 
@@ -77,7 +81,8 @@ function getSecs(time, secs) {
   var m = (hour * 3600) + (min * 60) + (secs);
   console.log("hours: " + hour)
   console.log("mins: " + min)
- // console.log(s)
+  console.log("secs: " + secs)
+  console.log("m: " + m)
   return m;
 }
 
