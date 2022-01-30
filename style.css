@@ -1,0 +1,131 @@
+/* The alert message box */
+.alert {
+  padding: 15px;
+  background-color: rgba(15, 99, 29, 0.267);
+  color:rgb(31, 8, 6);
+  margin-bottom: 15px;
+  text-align: center;
+  border-style: double; 
+  border-width: 15px;
+  
+  
+}
+
+/* The close button */
+.closebutton {
+  margin-left: 15px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: rgb(206, 114, 114);
+}
+
+
+body, html {
+  height: 100%;
+}
+
+.bg {
+  background-image: url(https://media.giphy.com/media/TRebCjNbc4dIA/giphy.gif);
+  height: 100% 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+h1 {
+  font-size: 50px; 
+  text-align: center;
+  color: rgb(11, 31, 15);
+  font-weight: bold 1000;
+   font-family: luminari;
+    margin: 0;
+   position: absolute;               
+   top: 15%;      
+   left: 50%;
+   margin-right: -50%;   
+   transform: translate(-50%, -50%)                
+    
+}
+
+.bold{
+  font-weight: 900;
+}
+
+.center {
+  text-align: center;
+}
+
+h2 {
+  font-family: luminari;
+  text-decoration: underline;
+  text-align: center;
+ 
+}
+
+h3 {
+  font-size: 35px; 
+  font-family: luminari;
+   margin: 0;
+   position: absolute;               
+   top: 25%;      
+   left: 50%;
+   margin-right: -50%;   
+   transform: translate(-50%, -50%)  
+}
+h4 {
+ font-family: luminari;
+ font-weight: 900;  
+}
+
+/* table porperties*/
+.show{
+  display:block;
+}
+
+/* table display */
+table{
+  font-size: 20px; 
+  margin-top: 20px;
+  text-align: center; 
+  background-color: darkkhaki; 
+}
+
+#show th, #show td{
+  padding: 13px; 
+}
+
+#button_add td input{
+  width: 100%; 
+}
+
+/*image*/
+img{
+  margin-left: auto;
+  width: 450px; 
+}
+/*highlight*/
+mark{
+  background-color:  rgba(193, 240, 189, 0.473); 
+}
+.color{
+  background-color: rgba(173, 172, 226, 0.884); 
+}
+/*invert dragon image*/
+.invert{
+  float: right;
+  transform: scaleX(-1);
+}
+
+
+
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class = "bg">
+  <div>
+   <script src="script.js"></script>
+   
+<!-- title and pictures -->
+    <h1> <mark class = "color" >Remind ToKnight</mark> </h1>
+    <h3 class = "center"> <mark class = "color"> The knight that has your back!</mark></h3>
+    <img src = "GenericKnight.gif" >
+    <img class = "invert" src = "dragon.gif">
+
+  
+
+<!-- alert -->
+     <div class="alert">
+      <span class="closebutton" onclick="this.parentElement.style.display='none';">&times;</span>
+        <h2><mark> Introduction pt. 1</mark></h2>
+        <h4><p> <mark> Hello traveler! I, Sir Minder, will be your personal guide to help you carry out your missions successfully and punctually! Lovely, no? 
+        <br>
+        <p><mark>Throughout our journey, I will help you manage your responsibilities, in any way you deem fit. 
+        I will remind you to drink water, eat meals, take brain breaks, and whatever else you wish to accomplish in our time together. Dragons won’t slay themselves after all!
+         <br>
+        <p> <mark>Keep scrolling to customize your reminder schedule and some other goodies! Or close this notification to continue!</p></mark>  </h4>
+
+      </div>
+    
+    <div class="alert">
+      <span class="closebutton" onclick="this.parentElement.style.display='none';">&times;</span>
+        <h2><mark> Instructions </mark></h2>
+        <h4><p> <mark> Enter your reminders and times below! Remember you can only enter times for the rest of the day until 11:59 PM.  
+        </p></mark>  </h4>
+
+      </div>
+      
+<!-- table -->
+<center>
+     <table border = "4"> 
+       <thead> 
+         <tr> 
+           <th> Reminder Title </th>
+           <td> <input type = "text" id = "reminderbox"> </td>
+         </tr>
+       </thead>
+       <tbody> 
+         <tr> 
+           <th> Reminder Time </th>
+           <td> <input type = "text" id = "timebox"> </td>
+         </tr>
+
+         <tr id = "button_add"> 
+           <td colspan= "2"> <input type = "button" id = "btn" value = "Add" onclick = "AddRow()"> </td>
+         </tr>
+      </tbody>
+     </table>
+     
+     <table border = "2" id = "show" > 
+       <thead>
+         <tr> 
+           <th> Reminder Title </th>
+           <th> Reminder Time </th>
+         </tr>
+       </thead> 
+     </table>
+   </center>
+  </body>
+</html>

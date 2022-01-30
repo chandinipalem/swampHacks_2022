@@ -1,0 +1,29 @@
+ {
+  "manifest_version" : 2, 
+  "name": "Remind ToKnight", "description": "Your personal guide to help you carry out your missions successfully and punctually!",
+  "version": "1.0",
+  "icons": {
+    "16": "/images/GenericKnight128.png",
+    "48": "/images/GenericKnight128.png",
+    "128": "/images/GenericKnight128.png"
+  },
+  "page_action": {
+    "default_icon": {
+      "16": "/images/GenericKnight128.png",
+      "48": "/images/GenericKnight128.png",
+      "128": "/images/GenericKnight128.png"
+    }
+  },
+
+"content_scripts": [{ 
+  
+  "css": ["main.css"] 
+  
+  }]
+
+},
+
+"browser_action": {
+  "default_popup": "popup.html",
+  "default_title": "Remind ToKnight."
+}
