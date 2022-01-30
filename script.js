@@ -11,24 +11,13 @@ for (i = 0; i < close.length; i++) {
   }
 }
 
-
 var now = new Date();
 var hrs = now.getHours();
-// var meridiem = "AM";
-// if (hrs > 12) {
-//   hrs = hrs - 12;
-//   meridiem = "PM";
-// }
 var mins = now.getMinutes();
 if (mins < 10)
   mins = "0" + mins;
 var secs = now.getSeconds();  
-var time = hrs + ":" + mins; // + " " + meridiem; 
-// console.log("Time now: " + time)
-
-
-
-
+var time = hrs + ":" + mins;
 
 var list1 = []; 
 var list2 = [];
@@ -58,7 +47,6 @@ function AddRow(){
 
     var add = document.getElementById('show'); 
     var newRow = add.insertRow(currentRow); 
-
     list1[i] = document.getElementById("reminderbox").value;list2[i] = document.getElementById("timebox").value; 
 
     var cell1 = newRow.insertCell(0); 
